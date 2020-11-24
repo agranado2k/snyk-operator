@@ -1,0 +1,8 @@
+domain: snyk.io
+layout: helm.sdk.operatorframework.io/v1
+projectName: snyk-monitor
+resources:
+- group: charts
+  kind: SnykMonitor
+  version: v1alpha1
+version: 3-alpha
