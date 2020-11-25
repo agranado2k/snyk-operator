@@ -11,7 +11,7 @@ resources:
 - auth_proxy_role_binding.yaml
 - auth_proxy_client_clusterrole.yaml
 # Build Custom RBAC service accounts and roles
-#- custom/snyk_monitor_cluster_role.yaml
-#- custom/snyk_monitor_cluster_role_binding.yaml
-#- custom/snyk_monitor_service_account.yaml
+- custom/operand_cluster_role.yaml
+- custom/operand_cluster_role_binding.yaml
+- custom/operand_service_account.yaml
 - custom/manager_service_account.yaml

@@ -4,9 +4,9 @@ metadata:
   name: snyk-monitor-rolebinding
 subjects:
 - kind: ServiceAccount
-  name: snyk-monitor
+  name: operand
   namespace: system
 roleRef:
   kind: ClusterRole
-  name: snyk-monitor-cluster-role
+  name: operand-cluster-role
   apiGroup: rbac.authorization.k8s.io

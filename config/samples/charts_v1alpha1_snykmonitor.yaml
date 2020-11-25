@@ -1,4 +1,4 @@
-apiVersion: charts.helm.k8s.io/v1alpha1
+apiVersion: charts.snyk.io/v1alpha1
 kind: SnykMonitor
 metadata:
   name: snyk-monitor
