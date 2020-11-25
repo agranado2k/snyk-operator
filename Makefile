@@ -1,7 +1,7 @@
 # Current Operator version
-VERSION ?= 0.0.1
+VERSION ?= 1.32.2 
 # Default bundle image tag
-BUNDLE_IMG ?= controller-bundle:$(VERSION)
+BUNDLE_IMG ?= quay.io/madorn/snyk-monitor-operator-bundle:$(VERSION)
 # Options for 'bundle-build'
 ifneq ($(origin CHANNELS), undefined)
 BUNDLE_CHANNELS := --channels=$(CHANNELS)

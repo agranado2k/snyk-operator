@@ -18,7 +18,7 @@ spec:
         app.kubernetes.io/name: {{ include "snyk-monitor.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-      serviceAccountName: {{ include "snyk-monitor.name" . }}
+      serviceAccountName: snyk-monitor-operand
       restartPolicy: Always
       containers:
         - name: {{ include "snyk-monitor.name" . }}

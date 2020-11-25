@@ -147,7 +147,7 @@ spec:
                 - --metrics-addr=127.0.0.1:8080
                 - --enable-leader-election
                 - --leader-election-id=snyk-monitor
-                image: docker.io/snyk/kubernetes-operator:1.32.2
+                image: quay.io/madorn/snyk-monitor-operator:1.32.2
                 name: manager
                 resources:
                   limits:
@@ -213,6 +213,7 @@ spec:
           resources:
           - snykmonitors
           - snykmonitors/status
+          - snykmonitors/finalizers
           verbs:
           - create
           - delete
@@ -256,6 +257,53 @@ spec:
           - update
           - watch
         serviceAccountName: snyk-monitor-manager
+      clusterPermissions:
+      - rules:
+        - apiGroups:
+          - ""
+          resources:
+          - pods
+          verbs:
+          - get
+          - list
+          - watch
+        - apiGroups:
+          - ""
+          resources:
+          - namespaces
+          verbs:
+          - get
+          - list
+          - watch
+        - apiGroups:
+          - ""
+          resources:
+          - replicationcontrollers
+          verbs:
+          - get
+          - list
+          - watch
+        - apiGroups:
+          - batch
+          resources:
+          - cronjobs
+          - jobs
+          verbs:
+          - get
+          - list
+          - watch
+        - apiGroups:
+          - apps
+          resources:
+          - replicasets
+          - daemonsets
+          - deployments
+          - statefulsets
+          verbs:
+          - get
+          - list
+          - watch
+        serviceAccountName: snyk-monitor-operand
     strategy: deployment
   installModes:
   - supported: true
@@ -289,7 +337,7 @@ spec:
   maintainers:
   - email: support@snyk.io
     name: Snyk Ltd.
-  maturity: stable
+  maturity: alpha
   provider:
     name: Snyk Ltd.
     url: https://snyk.io

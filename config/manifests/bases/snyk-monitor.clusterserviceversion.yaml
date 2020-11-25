@@ -148,7 +148,7 @@ spec:
   maintainers:
   - email: support@snyk.io
     name: Snyk Ltd.
-  maturity: stable
+  maturity: alpha
   provider:
     name: Snyk Ltd.
     url: https://snyk.io
